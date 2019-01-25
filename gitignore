@@ -1,0 +1,7 @@
+*~
+*.swp
+*.swo
+.bundle
+.DS_Store
+.idea
+/*-TODO.md

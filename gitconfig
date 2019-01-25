@@ -1,0 +1,58 @@
+[user]
+  name = Example Example
+  email = example@example.org
+  signkey = examplekey
+[github]
+  user = example
+[gpg]
+  program = gpg
+[core]
+  autocrlf = input
+  whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
+  excludesfile = ~/.gitignore
+[branch]
+  autosetupmerge = true
+[push]
+  default = simple
+[fetch]
+  prune = true
+[commit]
+  gpgsign = false
+[help]
+  autocorrect = 5
+[color]
+  ui = auto
+[color "branch"]
+  current = yellow reverse
+  local = yellow
+  remote = green
+[color "diff"]
+  meta = cyan dim
+  frag = magenta bold
+  old = red dim
+  new = green dim
+  whitespace = red reverse
+[color "status"]
+  added = yellow
+  changed = green
+  untracked = cyan
+[alias]
+  st = status
+  ci = commit -a
+  br = branch
+  co = checkout
+  ds = diff --staged
+  unstage = reset HEAD
+  uncommit = reset --soft HEAD^
+  olog = log --oneline
+  diffp = diff --color --patience
+  diffi = diff --color --color-words --abbrev --ignore-all-space
+  diffw = diff --color --color-words --abbrev
+  diffwp = diff --color --color-words --abbrev --patience
+  diffn = diff --color --name-status
+  lp = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit -p
+  lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --name-status
+  l = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+  unpushed = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --branches --not --remotes
+  sync = "remote update origin --prune"
+  pl = "merge --ff-only @{u}"
