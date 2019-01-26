@@ -475,7 +475,7 @@ call plug#begin('~/.config/nvim/plugged')
         else
             " otherwise, use :FZF
             nmap <silent> <leader>t :FZF<cr>
-            nmap <c-p> :FZF<cr>
+            " nmap <c-p> :FZF<cr>
         endif
 
         nmap <c-f> :Ag<cr>
