@@ -357,7 +357,7 @@ call plug#begin('~/.config/nvim/plugged')
     " substitute, search, and abbreviate multiple variants of a word
     Plug 'tpope/vim-abolish'
 
-    " Cheat40 is a foldable extensible 40-column cheat sheet that you may open in Vim by pressing <leader>?
+	" Cheat40 is a foldable extensible 40-column cheat sheet that you may open in Vim by pressing <leader>?
     Plug 'lifepillar/vim-cheat40'
 
     " search inside files using ripgrep. This plugin provides an Ack command.
@@ -565,6 +565,17 @@ call plug#begin('~/.config/nvim/plugged')
         nmap <silent><leader>gr :Gread<cr>
         nmap <silent><leader>gb :Gblame<cr>
     " }}}
+	
+	" EasyAlign {{{ "
+		" 🌻 A Vim alignment plugin
+		Plug 'junegunn/vim-easy-align'
+		" Start interactive EasyAlign in visual mode (e.g. vipga)
+		xmap ga <Plug>(EasyAlign)
+
+		" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+		nmap ga <Plug>(EasyAlign)
+
+	"  }}} "
 
     " ALE {{{
         Plug 'w0rp/ale' " Asynchonous linting engine
