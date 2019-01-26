@@ -567,15 +567,17 @@ call plug#begin('~/.config/nvim/plugged')
         \    'html': []
         \}
         let g:ale_fixers = {}
-        let g:ale_fixers['javascript'] = ['prettier']
+        let g:ale_fixers['javascript'] = ['prettier', 'eslint']
         let g:ale_javascript_prettier_use_local_config = 1
         let g:ale_fix_on_save = 0
+		let g:ale_completion_enabled = 1
     " }}}
 
     " UltiSnips {{{
         Plug 'honza/vim-snippets'
         Plug 'SirVer/ultisnips' " Snippets plugin
         Plug 'epilande/vim-react-snippets'
+		Plug 'alexbyk/vim-ultisnips-js-testing'
         Plug 'SirVer/ultisnips' " Snippets plugin
         let g:UltiSnipsExpandTrigger="<C-l>"
         let g:UltiSnipsExpandTrigger = "<nop>"
@@ -608,9 +610,6 @@ call plug#begin('~/.config/nvim/plugged')
         " Ruby / Ruby on Rails
         Plug 'tpope/vim-rails', { 'for': 'ruby' }
     " }}}
-
-    " Ruby / Ruby on Rails
-    Plug 'tpope/vim-rails', { 'for': 'ruby' }
 
     " JavaScript {{{
         Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx', 'html'] }
@@ -667,6 +666,7 @@ call plug#begin('~/.config/nvim/plugged')
 
     Plug 'fatih/vim-go', { 'for': 'go' }
     Plug 'timcharper/textile.vim', { 'for': 'textile' }
+	Plug 'sheerun/vim-polyglot'
     Plug 'lambdatoast/elm.vim', { 'for': 'elm' }
     Plug 'tpope/vim-endwise', { 'for': [ 'ruby', 'bash', 'zsh', 'sh' ]}
     Plug 'kchmck/vim-coffee-script', { 'for': 'coffeescript' }
