@@ -471,7 +471,7 @@ call plug#begin('~/.config/nvim/plugged')
         if isdirectory(".git")
             " if in a git project, use :GFiles
             nmap <silent> <leader>t :GFiles --cached --others --exclude-standard<cr>
-            nmap <c-p> :GFiles --cached --others --exclude-standard<cr>
+            " nmap <c-p> :GFiles --cached --others --exclude-standard<cr>
         else
             " otherwise, use :FZF
             nmap <silent> <leader>t :FZF<cr>
