@@ -357,6 +357,9 @@ call plug#begin('~/.config/nvim/plugged')
     " substitute, search, and abbreviate multiple variants of a word
     Plug 'tpope/vim-abolish'
 
+    " Cheat40 is a foldable extensible 40-column cheat sheet that you may open in Vim by pressing <leader>?
+    Plug 'lifepillar/vim-cheat40'
+
     " search inside files using ripgrep. This plugin provides an Ack command.
     Plug 'wincent/ferret'
 
@@ -443,7 +446,7 @@ call plug#begin('~/.config/nvim/plugged')
         nmap <silent> <leader>k :call ToggleNerdTree()<cr>
         " nmap <C-o> :call ToggleNerdTree()<cr>
         " find the current file in nerdtree without needing to reload the drawer
-        nmap <silent> <leader>y :NERDTreeFind<cr>
+        " nmap <silent> <leader>y :NERDTreeFind<cr>
 
         let NERDTreeQuitOnOpen=1
         let NERDTreeShowHidden=1
@@ -470,18 +473,17 @@ call plug#begin('~/.config/nvim/plugged')
 
         if isdirectory(".git")
             " if in a git project, use :GFiles
-            nmap <silent> <leader>t :GFiles --cached --others --exclude-standard<cr>
+            nmap <silent> <leader>e :GFiles --cached --others --exclude-standard<cr>
             " nmap <c-p> :GFiles --cached --others --exclude-standard<cr>
         else
             " otherwise, use :FZF
-            nmap <silent> <leader>t :FZF<cr>
+            nmap <silent> <leader>e :FZF<cr>
             " nmap <c-p> :FZF<cr>
         endif
 
         nmap <c-f> :Ag<cr>
         nmap <silent> <leader>r :Buffers<cr>
         nmap <c-a> :Buffers<cr>
-        nmap <silent> <leader>e :FZF<cr>
         nmap <leader><tab> <plug>(fzf-maps-n)
         xmap <leader><tab> <plug>(fzf-maps-x)
         omap <leader><tab> <plug>(fzf-maps-o)
@@ -556,6 +558,9 @@ call plug#begin('~/.config/nvim/plugged')
         Plug 'tpope/vim-fugitive'
         Plug 'tpope/vim-rhubarb' " hub extension for fugitive
         nmap <silent> <leader>gs :Gstatus<cr>
+		nmap <silent> <leader>gw :Gwrite<cr>
+		nmap <silent> <leader>gc :Gcommit<cr>
+		nmap <silent> <leader>gp :Gpush<cr>
         nmap <leader>ge :Gedit<cr>
         nmap <silent><leader>gr :Gread<cr>
         nmap <silent><leader>gb :Gblame<cr>

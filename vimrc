@@ -286,7 +286,7 @@ nnoremap g; g;zz
 nnoremap g, g,zz
 
 " Open a Quickfix window for the last search.
-nnoremap <silent> <leader>? :execute 'vimgrep /'.@/.'/g %'<CR>:copen<CR>
+" nnoremap <silent> <leader>? :execute 'vimgrep /'.@/.'/g %'<CR>:copen<CR>
 
 " Highlight word {{{
 
