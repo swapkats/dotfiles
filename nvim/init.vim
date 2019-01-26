@@ -534,6 +534,13 @@ call plug#begin('~/.config/nvim/plugged')
             return !col || getline('.')[col - 1]  =~ '\s'
         endfunction"}}}
     " }}}
+	
+	" {{{ "
+		Plug 'kana/vim-operator-user'
+		Plug 'haya14busa/vim-operator-flashy'
+		map y <Plug>(operator-flashy)
+		nmap Y <Plug>(operator-flashy)$
+	" }}} "
 
     " signify {{{
         " Plug 'airblade/vim-gitgutter'
@@ -579,8 +586,8 @@ call plug#begin('~/.config/nvim/plugged')
         Plug 'epilande/vim-react-snippets'
 		Plug 'alexbyk/vim-ultisnips-js-testing'
         Plug 'SirVer/ultisnips' " Snippets plugin
-        let g:UltiSnipsExpandTrigger="<C-l>"
-        let g:UltiSnipsExpandTrigger = "<nop>"
+		let g:UltiSnipsExpandTrigger = "<nop>"
+		let g:UltiSnipsExpandTrigger="<C-l>"
         let g:ulti_expand_or_jump_res = 0
     " }}}
 " }}}
