@@ -601,8 +601,6 @@ call plug#begin('~/.config/nvim/plugged')
         Plug 'SirVer/ultisnips' " Snippets plugin
         Plug 'swapkats/vim-react-snippets'
 		Plug 'alexbyk/vim-ultisnips-js-testing'
-        Plug 'SirVer/ultisnips' " Snippets plugin
-		let g:UltiSnipsExpandTrigger = "<nop>"
 		let g:UltiSnipsExpandTrigger="<C-l>"
         let g:ulti_expand_or_jump_res = 0
     " }}}
@@ -721,7 +719,7 @@ call plug#end()
     highlight Type cterm=italic
     highlight Normal ctermbg=none
 
-    call deoplete#custom#set('ultisnips', 'matchers', ['matcher_fuzzy'])
+    call deoplete#custom#source('ultisnips', 'matchers', ['matcher_fuzzy'])
 
 
 " }}}
