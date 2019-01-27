@@ -599,7 +599,7 @@ call plug#begin('~/.config/nvim/plugged')
     " UltiSnips {{{
         Plug 'honza/vim-snippets'
         Plug 'SirVer/ultisnips' " Snippets plugin
-        Plug 'epilande/vim-react-snippets'
+        Plug 'swapkats/vim-react-snippets'
 		Plug 'alexbyk/vim-ultisnips-js-testing'
         Plug 'SirVer/ultisnips' " Snippets plugin
 		let g:UltiSnipsExpandTrigger = "<nop>"
