@@ -1,9 +1,8 @@
 [user]
-  name = Example Example
-  email = example@example.org
-  signkey = examplekey
+  name = Swapnil Singh
+  email = mail@swapnilsingh.me
 [github]
-  user = example
+  user = Swap
 [gpg]
   program = gpg
 [core]
