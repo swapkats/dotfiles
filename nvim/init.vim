@@ -276,12 +276,13 @@ call plug#begin('~/.config/nvim/plugged')
     " enable . command in visual mode
     vnoremap . :normal .<cr>
 
-    "map <silent> <C-h> :call functions#WinMove('h')<cr>
-    "map <silent> <C-j> :call functions#WinMove('j')<cr>
-    "map <silent> <C-k> :call functions#WinMove('k')<cr>
-    "map <silent> <C-l> :call functions#WinMove('l')<cr>
+    map <silent> <C-h> :call functions#WinMove('h')<cr>
+    map <silent> <C-j> :call functions#WinMove('j')<cr>
+    map <silent> <C-k> :call functions#WinMove('k')<cr>
+    map <silent> <C-l> :call functions#WinMove('l')<cr>
 
     map <leader>wc :wincmd q<cr>
+    map <leader>q :wincmd q<cr>
 
     " move line mappings
     " ∆ is <A-j> on macOS
@@ -315,10 +316,10 @@ call plug#begin('~/.config/nvim/plugged')
     nnoremap <silent> <leader>u :call functions#HtmlUnEscape()<cr>
 
     set showmode
-    nnoremap <silent> <M-Right> :bn<CR>
-    nnoremap <silent> <M-Left> :bp<CR>
-    nnoremap <silent> <C-Right> :bn<CR>
-    nnoremap <silent> <C-Left> :bp<CR>
+    " nnoremap <silent> <M-Right> :bn<CR>
+    " nnoremap <silent> <M-Left> :bp<CR>
+    " nnoremap <silent> <C-Right> :bn<CR>
+    " nnoremap <silent> <C-Left> :bp<CR>
     nnoremap <silent> <C-d> :bd<CR>
 
     nmap <Leader>1 <Plug>lightline#bufferline#go(1)
@@ -600,8 +601,8 @@ call plug#begin('~/.config/nvim/plugged')
         Plug 'honza/vim-snippets'
         Plug 'SirVer/ultisnips' " Snippets plugin
         Plug 'swapkats/vim-react-snippets'
-		Plug 'alexbyk/vim-ultisnips-js-testing'
-		let g:UltiSnipsExpandTrigger="<C-l>"
+        Plug 'alexbyk/vim-ultisnips-js-testing'
+        let g:UltiSnipsExpandTrigger="<C-l>"
         let g:ulti_expand_or_jump_res = 0
     " }}}
 " }}}
