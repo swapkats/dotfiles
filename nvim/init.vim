@@ -19,6 +19,8 @@ call plug#begin('~/.config/nvim/plugged')
 
     set history=5000 " change history to 1000
     set textwidth=140
+    set colorcolumn=+1
+    set cursorline
 
     set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
     set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
@@ -226,7 +228,7 @@ call plug#begin('~/.config/nvim/plugged')
 " General Mappings {{{
     " set a map leader for more key combos
     let mapleader = ','
-
+	
     " remap esc
     inoremap jk <esc>
 
@@ -281,8 +283,9 @@ call plug#begin('~/.config/nvim/plugged')
     map <silent> <C-k> :call functions#WinMove('k')<cr>
     map <silent> <C-l> :call functions#WinMove('l')<cr>
 
+	nmap <leader>w <C-w>
     map <leader>wc :wincmd q<cr>
-    map <leader>q :wincmd q<cr>
+	map <leader>q :wincmd q<cr>
 
     " move line mappings
     " ∆ is <A-j> on macOS
