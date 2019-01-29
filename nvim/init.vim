@@ -1,3 +1,4 @@
+"
 " .vimrc / init.vim
 " The following vim/neovim configuration works for both Vim and NeoVim
 
@@ -119,6 +120,12 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'romainl/Apprentice'
     Plug 'joshdick/onedark.vim'
 
+	let g:netrw_banner = 0
+	let g:netrw_liststyle = 3
+	let g:netrw_browse_split = 4
+	let g:netrw_altv = 1
+	let g:netrw_winsize = 25
+	
     " LightLine {{{
         Plug 'itchyny/lightline.vim'
         Plug 'nicknisi/vim-base16-lightline'
@@ -238,6 +245,8 @@ call plug#begin('~/.config/nvim/plugged')
     " shortcut to save
     nmap <leader>, :w<cr>
 
+    nmap <leader>k :Vexplore<cr>
+
     " set paste toggle
     set pastetoggle=<C-v>
 
@@ -286,9 +295,8 @@ call plug#begin('~/.config/nvim/plugged')
     map <silent> <C-k> :call functions#WinMove('k')<cr>
     map <silent> <C-l> :call functions#WinMove('l')<cr>
 
-	nmap <leader>w <C-w>
-    map <leader>wc :wincmd q<cr>
-	map <leader>q :wincmd q<cr>
+    nmap <leader>w <C-w>
+    map <leader>q :wincmd c<cr>
 
     " move line mappings
     " ∆ is <A-j> on macOS
@@ -436,42 +444,7 @@ call plug#begin('~/.config/nvim/plugged')
     " context-aware pasting
     Plug 'sickill/vim-pasta'
 
-    " NERDTree {{{
-        Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] }
-        Plug 'Xuyuanp/nerdtree-git-plugin'
-        Plug 'ryanoasis/vim-devicons'
-
-        " Toggle NERDTree
-        function! ToggleNerdTree()
-            if @% != "" && (!exists("g:NERDTree") || (g:NERDTree.ExistsForTab() && !g:NERDTree.IsOpen()))
-                :NERDTreeFind
-            else 
-                :NERDTreeToggle
-            endif
-        endfunction
-        " toggle nerd tree
-        nmap <silent> <leader>k :call ToggleNerdTree()<cr>
-        " nmap <C-o> :call ToggleNerdTree()<cr>
-        " find the current file in nerdtree without needing to reload the drawer
-        " nmap <silent> <leader>y :NERDTreeFind<cr>
-
-        let NERDTreeQuitOnOpen=1
-        let NERDTreeShowHidden=1
-        " let NERDTreeDirArrowExpandable = '▷'
-        " let NERDTreeDirArrowCollapsible = '▼'
-        let g:NERDTreeIndicatorMapCustom = {
-        \ "Modified"  : "✹",
-        \ "Staged"      : "✚",
-        \ "Untracked" : "✭",
-        \ "Renamed"   : "➜",
-        \ "Unmerged"  : "═",
-        \ "Deleted"   : "✖",
-        \ "Dirty"      : "✗",
-        \ "Clean"      : "✔︎",
-        \ 'Ignored'   : '☒',
-        \ "Unknown"   : "?"
-        \ }
-    " }}}
+    Plug 'ryanoasis/vim-devicons'
 
     " FZF {{{
         Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
