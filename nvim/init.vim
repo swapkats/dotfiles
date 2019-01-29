@@ -232,6 +232,9 @@ call plug#begin('~/.config/nvim/plugged')
     " remap esc
     inoremap jk <esc>
 
+    " shortcut to play macro from q register
+    nmap <enter> @q
+
     " shortcut to save
     nmap <leader>, :w<cr>
 
