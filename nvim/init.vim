@@ -109,15 +109,17 @@ call plug#begin('~/.config/nvim/plugged')
     endif
 
     " enable 24 bit color support if supported
-    if (has('mac') && empty($TMUX) && has("termguicolors"))
+    " if (has('mac') && empty($TMUX) && has("termguicolors"))
         set termguicolors
-    endif
+    " endif
 
     " highlight conflicts
     match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
 
     " Load colorschemes
     Plug 'romainl/Apprentice'
+	Plug 'altercation/solarized'
+	Plug 'altercation/vim-colors-solarized'
     Plug 'joshdick/onedark.vim'
 
 	let g:netrw_banner = 0
@@ -684,7 +686,10 @@ call plug#end()
     else
         let g:onedark_termcolors=16
         let g:onedark_terminal_italics=1
-        colorscheme onedark
+        colorscheme Apprentice
+		" syntax enable
+		" set background=dark
+		" colorscheme solarized
     endif
     syntax on
     filetype plugin indent on
