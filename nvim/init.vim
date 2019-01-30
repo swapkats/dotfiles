@@ -118,9 +118,10 @@ call plug#begin('~/.config/nvim/plugged')
 
     " Load colorschemes
     Plug 'romainl/Apprentice'
-	Plug 'altercation/solarized'
-	Plug 'altercation/vim-colors-solarized'
+    Plug 'altercation/solarized'
+    Plug 'altercation/vim-colors-solarized'
     Plug 'joshdick/onedark.vim'
+	Plug 'chriskempson/base16-vim'
 
 	let g:netrw_banner = 0
 	let g:netrw_liststyle = 3
@@ -677,20 +678,22 @@ call plug#begin('~/.config/nvim/plugged')
 
 call plug#end()
 
+let base16colorspace=256  " Access colors present in 256 colorspace
+colorscheme base16-default-dark
 " Colorscheme and final setup {{{
     " This call must happen after the plug#end() call to ensure
     " that the colorschemes have been loaded
-    if filereadable(expand("~/.vimrc_background"))
-        let base16colorspace=256
-        source ~/.vimrc_background
-    else
-        let g:onedark_termcolors=16
-        let g:onedark_terminal_italics=1
-        colorscheme Apprentice
+    " if filereadable(expand("~/.vimrc_background"))
+        " let base16colorspace=256
+        " source ~/.vimrc_background
+    " else
+        " let g:onedark_termcolors=16
+        " let g:onedark_terminal_italics=1
+        " colorscheme Apprentice
 		" syntax enable
 		" set background=dark
 		" colorscheme solarized
-    endif
+    " endif
     syntax on
     filetype plugin indent on
     " make the highlighting of tabs and other non-text less annoying
