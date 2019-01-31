@@ -130,13 +130,15 @@ call plug#begin('~/.config/nvim/plugged')
 	let g:netrw_winsize = 25
 	
     " LightLine {{{
+		Plug 'ryanoasis/vim-devicons'
         Plug 'itchyny/lightline.vim'
-        Plug 'nicknisi/vim-base16-lightline'
+        " Plug 'nicknisi/vim-base16-lightline'
+		Plug 'mike-hearn/base16-vim-lightline'
         Plug 'mgee/lightline-bufferline'
         " Plug 'felixjung/vim-base16-lightline'
         set showtabline=2
         let g:lightline = {
-        \    'colorscheme': 'base16',
+        \    'colorscheme': 'base16_default_dark',
         \    'active': {
         \        'left': [ [ 'mode', 'paste' ],
         \                [ 'gitbranch' ],
@@ -447,7 +449,6 @@ call plug#begin('~/.config/nvim/plugged')
     " context-aware pasting
     Plug 'sickill/vim-pasta'
 
-    Plug 'ryanoasis/vim-devicons'
 
     " FZF {{{
         Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
