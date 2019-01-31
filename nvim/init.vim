@@ -270,7 +270,7 @@ call plug#begin('~/.config/nvim/plugged')
     vnoremap <space> za
 
     " edit gitconfig
-    map <leader>eg :e! ~/.gitconfig<cr>
+    " map <leader>eg :e! ~/.gitconfig<cr>
 
     " activate spell-checking alternatives
     nmap ;s :set invspell spelllang=en<cr>
