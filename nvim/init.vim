@@ -562,6 +562,8 @@ call plug#begin('~/.config/nvim/plugged')
 
     " ALE {{{
         Plug 'w0rp/ale' " Asynchonous linting engine
+
+        nmap <leader>n :ALENext<cr>
         let g:ale_change_sign_column_color = 0
         let g:ale_sign_column_always = 1
         let g:ale_sign_error = '✖'
@@ -619,6 +621,7 @@ call plug#begin('~/.config/nvim/plugged')
         Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx', 'html'] }
         Plug 'moll/vim-node', { 'for': 'javascript' }
         Plug 'mxw/vim-jsx', { 'for': ['javascript.jsx', 'javascript'] }
+		Plug 'chemzqm/vim-jsx-improve'
         Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
         Plug 'ternjs/tern_for_vim', { 'for': ['javascript', 'javascript.jsx'], 'do': 'npm install' }
         Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
