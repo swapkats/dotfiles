@@ -105,6 +105,7 @@ fi
 
 alias esli='eslint'
 alias eslintfix='eslint --fix'
+alias git=hub
 alias brucop='bundle exec rubocop -a -D $(git diff --cached --name-only --diff-filter=d HEAD | egrep ".(rb|rake)$" | egrep -v "db\/schema.rb" | egrep -v "lib\/pb") Gemfile'
 alias bife='bundle exec knife'
 alias bagrant='bundle exec vagrant'
