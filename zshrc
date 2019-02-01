@@ -163,6 +163,7 @@ set -o vi
 bindkey -v
 bindkey '^R' history-incremental-search-backward
 
+CDPATH=.:$HOME:$HOME/_code
 
 export PATH="$HOME/.bin:$PATH"
 export PATH="$HOME/.bin.local:$PATH"
