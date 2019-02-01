@@ -91,6 +91,7 @@ alias ..5='cd ../../../../..'
 alias l='ls -CF'
 alias -- +='pushd .'
 alias -- -=popd
+alias .f='cd ~/.bin/dotfiles'
 
 alias be='bundle exec'
 if (command -v rvm >/dev/null 2>&1 ); then
@@ -121,7 +122,7 @@ alias convim='vim -u /usr/share/vim/vimrc'
 alias ios_log='tail -f ~/Library/Logs/CoreSimulator/*/system.log'
 
 export RSPEC=true
-export EDITOR=vim
+export EDITOR=nvim
 
 function cdbundle() {
   TARGET=$@
