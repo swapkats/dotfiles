@@ -93,9 +93,9 @@ call plug#begin('~/.config/nvim/plugged')
     set foldlevel=1
 
     " toggle invisible characters
-    set list
-    set listchars=tab:→\ ,eol:¬,trail:⋅,extends:❯,precedes:❮
-    set showbreak=↪
+    set nolist
+    " set listchars=tab:→\ ,eol:¬,trail:⋅,extends:❯,precedes:❮
+    " set showbreak=↪
 
     set t_Co=256 " Explicitly tell vim that the terminal supports 256 colors
     " switch cursor to line when in insert mode, and block when not
