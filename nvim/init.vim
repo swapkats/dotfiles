@@ -246,6 +246,7 @@ call plug#begin('~/.config/nvim/plugged')
 
     " shortcut to play macro from q register
     nmap <enter> @q
+    nmap <leader>h :set hlsearch!
 
     " shortcut to save
     nmap <leader>, :w<cr>
