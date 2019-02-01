@@ -128,7 +128,7 @@ call plug#begin('~/.config/nvim/plugged')
 	let g:netrw_browse_split = 4
 	let g:netrw_altv = 1
 	let g:netrw_winsize = 25
-	
+
     " LightLine {{{
 		Plug 'ryanoasis/vim-devicons'
         Plug 'itchyny/lightline.vim'
@@ -240,7 +240,7 @@ call plug#begin('~/.config/nvim/plugged')
 " General Mappings {{{
     " set a map leader for more key combos
     let mapleader = ','
-	
+
     " remap esc
     inoremap jk <esc>
 
@@ -296,10 +296,14 @@ call plug#begin('~/.config/nvim/plugged')
     " enable . command in visual mode
     vnoremap . :normal .<cr>
 
-    map <silent> <C-h> :call functions#WinMove('h')<cr>
-    map <silent> <C-j> :call functions#WinMove('j')<cr>
-    map <silent> <C-k> :call functions#WinMove('k')<cr>
-    map <silent> <C-l> :call functions#WinMove('l')<cr>
+	" move among buffers with CTRL
+	map <C-j> :bnext<CR>
+	map <C-k> :bprev<CR>
+
+    " map <silent> <C-h> :call functions#WinMove('h')<cr>
+    " map <silent> <C-j> :call functions#WinMove('j')<cr>
+    " map <silent> <C-k> :call functions#WinMove('k')<cr>
+    " map <silent> <C-l> :call functions#WinMove('l')<cr>
 
     nmap <leader>w <C-w>
     map <leader>q :wincmd c<cr>
@@ -450,7 +454,6 @@ call plug#begin('~/.config/nvim/plugged')
     " context-aware pasting
     Plug 'sickill/vim-pasta'
 
-
     " FZF {{{
         Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
         Plug 'junegunn/fzf.vim'
@@ -503,7 +506,6 @@ call plug#begin('~/.config/nvim/plugged')
             \ call fzf#vim#gitfiles(<q-args>, fzf#vim#with_preview('right:50%', '?'), <bang>0)
     " }}}
 
-    
     " Deoplete {{{
         Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
         Plug 'zchee/deoplete-jedi', { 'for' : 'python'}
@@ -521,7 +523,7 @@ call plug#begin('~/.config/nvim/plugged')
             return !col || getline('.')[col - 1]  =~ '\s'
         endfunction"}}}
     " }}}
-	
+
 	" {{{ "
 		Plug 'kana/vim-operator-user'
 		Plug 'haya14busa/vim-operator-flashy'
@@ -550,7 +552,7 @@ call plug#begin('~/.config/nvim/plugged')
         nmap <silent><leader>gr :Gread<cr>
         nmap <silent><leader>gb :Gblame<cr>
     " }}}
-	
+
 	" EasyAlign {{{ "
 		" 🌻 A Vim alignment plugin
 		Plug 'junegunn/vim-easy-align'
@@ -591,6 +593,7 @@ call plug#begin('~/.config/nvim/plugged')
 	nmap <leader>t :TestNearest<CR>
 	nmap <leader>f :TestFile<CR>
 	nmap <leader>s :TestSuite<CR>
+	" nmap tt :vs|TestVisit<CR>
 " }}} "
 
 " UltiSnips {{{
@@ -659,7 +662,6 @@ call plug#begin('~/.config/nvim/plugged')
         let g:tsuquyomi_completion_detail = 1
     " }}}
 
-
     " Styles {{{
         Plug 'wavded/vim-stylus', { 'for': ['stylus', 'markdown'] }
         Plug 'groenewege/vim-less', { 'for': 'less' }
@@ -724,7 +726,6 @@ colorscheme base16-default-dark
     highlight Normal ctermbg=none
 
     call deoplete#custom#source('ultisnips', 'matchers', ['matcher_fuzzy'])
-
 
 " }}}
 
