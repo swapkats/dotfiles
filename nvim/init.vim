@@ -577,65 +577,76 @@ call plug#begin('~/.config/nvim/plugged')
         \    'html': []
         \}
         let g:ale_fixers = {}
-        let g:ale_fixers['javascript'] = ['prettier', 'eslint']
-        let g:ale_javascript_prettier_use_local_config = 1
-        let g:ale_fix_on_save = 0
-		let g:ale_completion_enabled = 1
-    " }}}
+	let g:ale_fixers['javascript'] = ['prettier', 'eslint']
+	let g:ale_javascript_prettier_use_local_config = 1
+	let g:ale_fix_on_save = 0
+	let g:ale_completion_enabled = 1
+" }}}
 
-    " UltiSnips {{{
-        Plug 'honza/vim-snippets'
-        Plug 'SirVer/ultisnips' " Snippets plugin
-        Plug 'swapkats/vim-react-snippets'
-        Plug 'alexbyk/vim-ultisnips-js-testing'
-        let g:UltiSnipsExpandTrigger="<C-l>"
-        let g:ulti_expand_or_jump_res = 0
-    " }}}
+" VimTest {{{ "
+	Plug 'janko-m/vim-test'
+	let test#strategy = "vimux"
+	let g:test#runner_commands = ['Jest']
+
+	nmap <leader>t :TestNearest<CR>
+	nmap <leader>f :TestFile<CR>
+	nmap <leader>s :TestSuite<CR>
+" }}} "
+
+" UltiSnips {{{
+	Plug 'honza/vim-snippets'
+	Plug 'SirVer/ultisnips' " Snippets plugin
+	Plug 'swapkats/vim-react-snippets'
+	Plug 'alexbyk/vim-ultisnips-js-testing'
+	let g:UltiSnipsExpandTrigger="<C-l>"
+	let g:ulti_expand_or_jump_res = 0
+" }}}
 " }}}
 
 " Language-Specific Configuration {{{
-    " html / templates {{{
-        " emmet support for vim - easily create markdup wth CSS-like syntax
-        Plug 'mattn/emmet-vim', { 'for': ['html', 'javascript.jsx', 'eruby' ]}
-        let g:user_emmet_settings = {
-        \  'javascript.jsx': {
-        \       'extends': 'jsx',
-        \  },
-        \}
+" html / templates {{{
+	" emmet support for vim - easily create markdup wth CSS-like syntax
+	Plug 'mattn/emmet-vim', { 'for': ['html', 'javascript.jsx', 'eruby' ]}
+	let g:user_emmet_settings = {
+	\  'javascript.jsx': {
+	\       'extends': 'jsx',
+	\  },
+	\}
 
-        " match tags in html, similar to paren support
-        Plug 'gregsexton/MatchTag', { 'for': 'html' }
+	" match tags in html, similar to paren support
+	Plug 'gregsexton/MatchTag', { 'for': 'html' }
 
-        " html5 support
-        Plug 'othree/html5.vim', { 'for': 'html' }
+	" html5 support
+	Plug 'othree/html5.vim', { 'for': 'html' }
 
-        " mustache support
-        Plug 'mustache/vim-mustache-handlebars'
+	" mustache support
+	Plug 'mustache/vim-mustache-handlebars'
 
-        " pug / jade support
-        Plug 'digitaltoad/vim-pug', { 'for': ['jade', 'pug'] }
+	" pug / jade support
+	Plug 'digitaltoad/vim-pug', { 'for': ['jade', 'pug'] }
 
-        " Ruby / Ruby on Rails
-        Plug 'tpope/vim-rails', { 'for': 'ruby' }
-    " }}}
+	" Ruby / Ruby on Rails
+	Plug 'tpope/vim-rails', { 'for': 'ruby' }
+" }}}
 
-    " JavaScript {{{
-        Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx', 'html'] }
-        Plug 'moll/vim-node', { 'for': 'javascript' }
-        Plug 'mxw/vim-jsx', { 'for': ['javascript.jsx', 'javascript'] }
-		Plug 'chemzqm/vim-jsx-improve'
-        Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
-        Plug 'ternjs/tern_for_vim', { 'for': ['javascript', 'javascript.jsx'], 'do': 'npm install' }
-        Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
-        let g:prettier#autoformat = 0
-        let g:prettier#exec_cmd_async = 1
-        let g:prettier#quickfix_enabled = 0
-        let g:prettier#quickfix_auto_focus = 0
-        let g:prettier#config#print_width = 140
-        let g:prettier#config#single_quote = 'true'
-        let g:prettier#config#trailing_comma = 'all'
-        let g:prettier#config#bracket_spacing = 'true'
-        let g:prettier#config#jsx_bracket_same_line = 'false'
+" JavaScript {{{
+	Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx', 'html'] }
+	Plug 'moll/vim-node', { 'for': 'javascript' }
+	Plug 'mxw/vim-jsx', { 'for': ['javascript.jsx', 'javascript'] }
+	Plug 'chemzqm/vim-jsx-improve'
+	Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+	Plug 'ternjs/tern_for_vim', { 'for': ['javascript', 'javascript.jsx'], 'do': 'npm install' }
+	Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+	nmap <leader>p :Prettier<cr>
+	let g:prettier#autoformat = 0
+	let g:prettier#exec_cmd_async = 1
+	let g:prettier#quickfix_enabled = 0
+	let g:prettier#quickfix_auto_focus = 0
+	let g:prettier#config#print_width = 140
+	let g:prettier#config#single_quote = 'true'
+	let g:prettier#config#trailing_comma = 'all'
+	let g:prettier#config#bracket_spacing = 'true'
+	let g:prettier#config#jsx_bracket_same_line = 'false'
     " }}}
 
     " TypeScript {{{
