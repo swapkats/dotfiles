@@ -92,6 +92,7 @@ alias l='ls -CF'
 alias -- +='pushd .'
 alias -- -=popd
 alias .f='cd ~/.bin/dotfiles'
+alias c='cd ~/_code'
 
 alias be='bundle exec'
 if (command -v rvm >/dev/null 2>&1 ); then
