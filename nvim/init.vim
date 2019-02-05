@@ -241,17 +241,51 @@ call plug#begin('~/.config/nvim/plugged')
     " set a map leader for more key combos
     let mapleader = ','
 
+	" shortcut to save
+	nmap <leader>, :w<cr>
+	nmap <leader>h :set hlsearch!<cr>
+
+	" Nerd tree like project explorer
+	nmap <leader>k :Vexplore<cr>
+
+        nmap <leader>w <C-w>
+        map <leader>q :wincmd c<cr>
+        nmap <leader>b :Bdelete<cr>
+
+	nmap <leader>l :set list!<cr>
+
+	nmap <leader><space> :%s/\s\+$<cr>
+	nmap <leader><space><space> :%s/\n\{2,}/\r\r/g<cr>
+
+
+	" Textmate style indentation
+	vmap <leader>[ <gv
+	vmap <leader>] >gv
+	nmap <leader>[ <<
+	nmap <leader>] >>
+
+	" switch between current and last buffer
+	nmap <leader>. <c-^>
+
+
+        nmap <Leader>1 <Plug>lightline#bufferline#go(1)
+        nmap <Leader>2 <Plug>lightline#bufferline#go(2)
+        nmap <Leader>3 <Plug>lightline#bufferline#go(3)
+        nmap <Leader>4 <Plug>lightline#bufferline#go(4)
+        nmap <Leader>5 <Plug>lightline#bufferline#go(5)
+        nmap <Leader>6 <Plug>lightline#bufferline#go(6)
+        nmap <Leader>7 <Plug>lightline#bufferline#go(7)
+        nmap <Leader>8 <Plug>lightline#bufferline#go(8)
+        nmap <Leader>9 <Plug>lightline#bufferline#go(9)
+        nmap <Leader>0 <Plug>lightline#bufferline#go
+
+
     " remap esc
     inoremap jk <esc>
 
     " shortcut to play macro from q register
     nmap <enter> @q
-    nmap <leader>h :set hlsearch!
 
-    " shortcut to save
-    nmap <leader>, :w<cr>
-
-    nmap <leader>k :Vexplore<cr>
 
     " set paste toggle
     set pastetoggle=<C-v>
@@ -271,7 +305,8 @@ call plug#begin('~/.config/nvim/plugged')
     " Space to toggle folds.
     nnoremap <space> za
     vnoremap <space> za
-
+    
+    
     " edit gitconfig
     " map <leader>eg :e! ~/.gitconfig<cr>
 
@@ -279,20 +314,6 @@ call plug#begin('~/.config/nvim/plugged')
     nmap ;s :set invspell spelllang=en<cr>
 
     " remove extra whitespace
-    nmap <leader><space> :%s/\s\+$<cr>
-    nmap <leader><space><space> :%s/\n\{2,}/\r\r/g<cr>
-
-    nmap <leader>l :set list!<cr>
-
-    " Textmate style indentation
-    vmap <leader>[ <gv
-    vmap <leader>] >gv
-    nmap <leader>[ <<
-    nmap <leader>] >>
-
-    " switch between current and last buffer
-    nmap <leader>. <c-^>
-
     " enable . command in visual mode
     vnoremap . :normal .<cr>
 
@@ -304,10 +325,6 @@ call plug#begin('~/.config/nvim/plugged')
     " map <silent> <C-j> :call functions#WinMove('j')<cr>
     " map <silent> <C-k> :call functions#WinMove('k')<cr>
     " map <silent> <C-l> :call functions#WinMove('l')<cr>
-
-    nmap <leader>w <C-w>
-    map <leader>q :wincmd c<cr>
-
     " move line mappings
     " ∆ is <A-j> on macOS
     " ˚ is <A-k> on macOS
@@ -319,7 +336,7 @@ call plug#begin('~/.config/nvim/plugged')
     vnoremap ˚ :m '<-2<cr>gv=gv
 
     " toggle cursor line
-    nnoremap <leader>i :set cursorline!<cr>
+    " nnoremap <leader>i :set cursorline!<cr>
 
     " scroll the viewport faster
     nnoremap <C-e> 3<C-e>
@@ -333,11 +350,10 @@ call plug#begin('~/.config/nvim/plugged')
 
     " inoremap <tab> <c-r>=Smart_TabComplete()<CR>
 
-    map <leader>r :call RunCustomCommand()<cr>
     " map <leader>s :call SetCustomCommand()<cr>
     let g:silent_custom_command = 0
 
-    nnoremap <silent> <leader>u :call functions#HtmlUnEscape()<cr>
+    " nnoremap <silent> <leader>u :call functions#HtmlUnEscape()<cr>
 
     set showmode
     nnoremap <silent> <M-Right> :bn<CR>
@@ -345,17 +361,6 @@ call plug#begin('~/.config/nvim/plugged')
     nnoremap <silent> <C-Right> :bn<CR>
     nnoremap <silent> <C-Left> :bp<CR>
     nnoremap <silent> <C-d> :bd<CR>
-
-    nmap <Leader>1 <Plug>lightline#bufferline#go(1)
-    nmap <Leader>2 <Plug>lightline#bufferline#go(2)
-    nmap <Leader>3 <Plug>lightline#bufferline#go(3)
-    nmap <Leader>4 <Plug>lightline#bufferline#go(4)
-    nmap <Leader>5 <Plug>lightline#bufferline#go(5)
-    nmap <Leader>6 <Plug>lightline#bufferline#go(6)
-    nmap <Leader>7 <Plug>lightline#bufferline#go(7)
-    nmap <Leader>8 <Plug>lightline#bufferline#go(8)
-    nmap <Leader>9 <Plug>lightline#bufferline#go(9)
-    nmap <Leader>0 <Plug>lightline#bufferline#go
 
 " }}}
 
@@ -437,7 +442,6 @@ call plug#begin('~/.config/nvim/plugged')
 
     " Close buffers but keep splits
     Plug 'moll/vim-bbye'
-    nmap <leader>b :Bdelete<cr>
 
     Plug 'terryma/vim-multiple-cursors'
     let g:multi_cursor_next_key='<C-m>'
@@ -470,8 +474,8 @@ call plug#begin('~/.config/nvim/plugged')
         endif
 
         nmap <c-f> :Ag<cr>
-        nmap <silent> <leader>r :Buffers<cr>
-        nmap <c-a> :Buffers<cr>
+        " nmap <silent> <leader>r :Buffers<cr>
+        " nmap <c-a> :Buffers<cr>
         nmap <leader><tab> <plug>(fzf-maps-n)
         xmap <leader><tab> <plug>(fzf-maps-x)
         omap <leader><tab> <plug>(fzf-maps-o)
@@ -636,6 +640,7 @@ call plug#begin('~/.config/nvim/plugged')
 	Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx', 'html'] }
 	Plug 'moll/vim-node', { 'for': 'javascript' }
 	Plug 'mxw/vim-jsx', { 'for': ['javascript.jsx', 'javascript'] }
+    let g:xml_syntax_folding = 1
 	Plug 'chemzqm/vim-jsx-improve'
 	Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 	Plug 'ternjs/tern_for_vim', { 'for': ['javascript', 'javascript.jsx'], 'do': 'npm install' }
@@ -650,7 +655,14 @@ call plug#begin('~/.config/nvim/plugged')
 	let g:prettier#config#trailing_comma = 'all'
 	let g:prettier#config#bracket_spacing = 'true'
 	let g:prettier#config#jsx_bracket_same_line = 'false'
-    " }}}
+	let g:jsx_ext_required = 1
+	hi link xmlEndTag xmlTag
+	" Fixes jsx end tag hightlight
+	hi Tag ctermfg=04
+	hi xmlTag ctermfg=04 
+	hi xmlTagName ctermfg=04 
+	hi xmlEndTag ctermfg=04
+" }}}
 
     " TypeScript {{{
         Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
