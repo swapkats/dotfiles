@@ -640,7 +640,11 @@ call plug#begin('~/.config/nvim/plugged')
 	Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx', 'html'] }
 	Plug 'moll/vim-node', { 'for': 'javascript' }
 	Plug 'mxw/vim-jsx', { 'for': ['javascript.jsx', 'javascript'] }
+	Plug 'maxmellon/vim-jsx-pretty'
     let g:xml_syntax_folding = 1
+	" Fixes jsx end tag hightlight
+	hi link xmlEndTag xmlTag
+	" syn region xmlTagName matchgroup=xmlEndTag start=+</+ end=+>+
 	Plug 'chemzqm/vim-jsx-improve'
 	Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 	Plug 'ternjs/tern_for_vim', { 'for': ['javascript', 'javascript.jsx'], 'do': 'npm install' }
@@ -655,13 +659,7 @@ call plug#begin('~/.config/nvim/plugged')
 	let g:prettier#config#trailing_comma = 'all'
 	let g:prettier#config#bracket_spacing = 'true'
 	let g:prettier#config#jsx_bracket_same_line = 'false'
-	let g:jsx_ext_required = 1
-	hi link xmlEndTag xmlTag
-	" Fixes jsx end tag hightlight
-	hi Tag ctermfg=04
-	hi xmlTag ctermfg=04 
-	hi xmlTagName ctermfg=04 
-	hi xmlEndTag ctermfg=04
+	let g:jsx_ext_required = 0
 " }}}
 
     " TypeScript {{{
