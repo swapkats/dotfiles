@@ -381,6 +381,11 @@ call plug#begin('~/.config/nvim/plugged')
         " when there are multiple windows open
         autocmd FileType qf wincmd J
         autocmd FileType qf nmap <buffer> q :q<cr>
+
+		autocmd BufReadPost,BufNewFile *spec.js set filetype=jasmine.javascript syntax=jasmine
+		autocmd BufReadPost,BufNewFile *_spec.js set filetype=jasmine.javascript syntax=jasmine
+		autocmd BufReadPost,BufNewFile *Spec.js set filetype=jasmine.javascript syntax=jasmine
+
     augroup END
 " }}}
 
@@ -650,6 +655,9 @@ call plug#begin('~/.config/nvim/plugged')
 	Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 	Plug 'ternjs/tern_for_vim', { 'for': ['javascript', 'javascript.jsx'], 'do': 'npm install' }
 	Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+	Plug 'joaohkfaria/vim-jest-snippets'
+	Plug 'glanotte/vim-jasmine'
+
 	nmap <leader>p :Prettier<cr>
 	let g:prettier#autoformat = 0
 	let g:prettier#exec_cmd_async = 1
