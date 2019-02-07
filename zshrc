@@ -82,6 +82,8 @@ else
   export EDITOR='nvim'
 fi
 
+source $(brew --prefix nvm)/nvm.sh
+
 
 alias ..1='cd ..'
 alias ..2='cd ../..'
