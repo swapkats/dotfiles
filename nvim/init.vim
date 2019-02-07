@@ -578,6 +578,15 @@ call plug#begin('~/.config/nvim/plugged')
 
 	"  }}} "
 
+	" EasyMotion {{{
+		Plug 'easymotion/vim-easymotion'
+		nmap ff <Plug>(easymotion-prefix)
+		map  / <Plug>(easymotion-sn)
+		omap / <Plug>(easymotion-tn)
+		map  n <Plug>(easymotion-next)
+		map  N <Plug>(easymotion-prev)
+	"}}}"
+
     " ALE {{{
         Plug 'w0rp/ale' " Asynchonous linting engine
 
