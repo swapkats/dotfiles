@@ -242,6 +242,7 @@ call plug#begin('~/.config/nvim/plugged')
     let mapleader = ','
 
 	" shortcut to save
+	nmap <space><space> :w<cr>
 	nmap <leader>, :w<cr>
 	nmap <leader>h :set hlsearch!<cr>
 
