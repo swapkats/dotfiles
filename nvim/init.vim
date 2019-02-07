@@ -376,6 +376,8 @@ call plug#begin('~/.config/nvim/plugged')
         autocmd VimResized * exe 'normal! \<c-w>='
         autocmd BufWritePost .vimrc,.vimrc.local,init.vim source %
         autocmd BufWritePost .vimrc.local source %
+		autocmd InsertLeave * write
+
         " save all files on focus lost, ignoring warnings about untitled buffers
         autocmd FocusLost * silent! wa
 
