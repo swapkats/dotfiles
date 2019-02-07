@@ -287,7 +287,7 @@ call plug#begin('~/.config/nvim/plugged')
     inoremap jj <esc>
 
     " shortcut to play macro from q register
-    nmap <enter> @q
+    nmap '' @q
 
 
     " set paste toggle
