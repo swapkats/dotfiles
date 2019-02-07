@@ -244,6 +244,7 @@ call plug#begin('~/.config/nvim/plugged')
 	" shortcut to save
 	nmap <space><space> :w<cr>
 	nmap <leader>, :w<cr>
+	nmap ;; :
 	nmap <leader>h :set hlsearch!<cr>
 
 	" Nerd tree like project explorer
