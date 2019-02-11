@@ -397,6 +397,10 @@ call plug#begin('~/.config/nvim/plugged')
     " substitute, search, and abbreviate multiple variants of a word
     Plug 'tpope/vim-abolish'
 
+	" Vim notes
+	Plug 'xolox/vim-misc'
+	Plug 'xolox/vim-notes'
+	
 	" Cheat40 is a foldable extensible 40-column cheat sheet that you may open in Vim by pressing <leader>?
     Plug 'lifepillar/vim-cheat40'
 
@@ -449,6 +453,10 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'kristijanhusak/vim-carbon-now-sh'
     " a simple tool for presenting slides in vim based on text files
     Plug 'sotte/presenting.vim', { 'for': 'markdown' }
+
+    " Markdown syntax, folding etc
+    Plug 'godlygeek/tabular'
+    Plug 'plasticboy/vim-markdown'
 
     " Close buffers but keep splits
     Plug 'moll/vim-bbye'
