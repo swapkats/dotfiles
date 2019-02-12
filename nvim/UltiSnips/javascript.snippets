@@ -8,7 +8,7 @@ snippet log "Insert cosole.log"
 console.debug($1);
 endsnippet
 snippet logc "Insert log with color"
-console.debug('%c$1', 'font-weight:bold;color:${2:green};');
+console.debug('%c$1', 'font-weight:bold;background-color:${2:green};color: white', ${3:''});$0
 endsnippet
 
 snippet doc "Doc Comment" b
