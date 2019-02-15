@@ -122,11 +122,11 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'joshdick/onedark.vim'
 	Plug 'chriskempson/base16-vim'
 
-	let g:netrw_banner = 0
-	let g:netrw_liststyle = 3
-	let g:netrw_browse_split = 4
-	let g:netrw_altv = 1
-	let g:netrw_winsize = 25
+    let g:netrw_banner = 0
+    let g:netrw_liststyle = 3
+    let g:netrw_browse_split = 4
+    let g:netrw_altv = 1
+    let g:netrw_winsize = 25
 
     " LightLine {{{
 		Plug 'ryanoasis/vim-devicons'
@@ -249,7 +249,7 @@ call plug#begin('~/.config/nvim/plugged')
 	" Nerd tree like project explorer
 	nmap <leader>k :Vexplore<cr>
 
-        nmap <leader>w <C-w>
+        " nmap <leader>w <C-w>
         map <leader>q :wincmd c<cr>
         nmap <leader>b :Bdelete<cr>
 
@@ -320,8 +320,8 @@ call plug#begin('~/.config/nvim/plugged')
     vnoremap . :normal .<cr>
 
 	" move among buffers with CTRL
-	map <C-j> :bnext<CR>
-	map <C-k> :bprev<CR>
+	nnoremap <C-j> <C-o>
+	nnoremap <C-k> <C-i> 
 
     " map <silent> <C-h> :call functions#WinMove('h')<cr>
     " map <silent> <C-j> :call functions#WinMove('j')<cr>
