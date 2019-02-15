@@ -455,11 +455,11 @@ call plug#begin('~/.config/nvim/plugged')
     " Close buffers but keep splits
     Plug 'moll/vim-bbye'
 
-    Plug 'terryma/vim-multiple-cursors'
-    let g:multi_cursor_next_key='<C-m>'
-    let g:multi_cursor_prev_key='<C-p>'
-    let g:multi_cursor_skip_key='<C-x>'
-    let g:multi_cursor_quit_key='<Esc>'
+    " Plug 'terryma/vim-multiple-cursors'
+    " let g:multi_cursor_next_key='<C-m>'
+    " let g:multi_cursor_prev_key='<C-p>'
+    " let g:multi_cursor_skip_key='<C-x>'
+    " let g:multi_cursor_quit_key='<Esc>'
 
     " Writing in vim {{{{
         Plug 'junegunn/limelight.vim'
