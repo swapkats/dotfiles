@@ -21,7 +21,6 @@ call plug#begin('~/.config/nvim/plugged')
     set history=5000 " change history to 1000
     set textwidth=140
     set colorcolumn=+1
-    set cursorline
 
     set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
     set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
