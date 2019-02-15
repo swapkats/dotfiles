@@ -358,10 +358,8 @@ call plug#begin('~/.config/nvim/plugged')
     " nnoremap <silent> <leader>u :call functions#HtmlUnEscape()<cr>
 
     set showmode
-    nnoremap <silent> <M-Right> :bn<CR>
-    nnoremap <silent> <M-Left> :bp<CR>
-    nnoremap <silent> <C-Right> :bn<CR>
-    nnoremap <silent> <C-Left> :bp<CR>
+    nnoremap <silent> <C-n> :bn<CR>
+    nnoremap <silent> <C-p> :bp<CR>
     nnoremap <silent> <C-d> :bd<CR>
 
 " }}}
