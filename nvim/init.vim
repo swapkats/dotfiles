@@ -241,7 +241,7 @@ call plug#begin('~/.config/nvim/plugged')
     let mapleader = ','
 
 	" shortcut to save
-	nmap <space><space> :w<cr>
+	" nmap <space><space> :w<cr>
 	nmap <leader>, :w<cr>
 	nmap ;; :
 	nmap <leader>h :set hlsearch!<cr>
@@ -483,6 +483,12 @@ call plug#begin('~/.config/nvim/plugged')
 		let g:fastfold_savehook = 0
 		let g:fastfold_force = 1
 	" }}}
+	
+	" Vim-Stay {{{
+		Plug 'zhimsel/vim-stay'
+		set viewoptions=cursor,folds,slash,unix
+	" }}}
+
 
     " context-aware pasting
     Plug 'sickill/vim-pasta'
