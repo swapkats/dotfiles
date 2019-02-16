@@ -21,7 +21,8 @@ iTerm2, NeoVim and tmux all use same color scheme *base16-default-dark*
 
 ## NeoVim setup
 
-* Works great for react development and tdd. Includes sensible plugins includes
+* Uses vim-plug
+* Works great for react development and tdd. Includes sensible plugins like
     - Ultisnips
     - vim-react-snippets
     - vim-jest-snippets
@@ -31,7 +32,7 @@ iTerm2, NeoVim and tmux all use same color scheme *base16-default-dark*
     - vim-prettier
     - vim-styled-components
 * Switching to normal mode saves buffer
-* Some notable plugins includes
+* Some notable plugins include
     - vim-commentary
     - vim-surround
     - vim-repeat

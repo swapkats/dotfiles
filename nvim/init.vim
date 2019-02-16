@@ -249,9 +249,9 @@ call plug#begin('~/.config/nvim/plugged')
 	" Nerd tree like project explorer
 	nmap <leader>k :Vexplore<cr>
 
-        " nmap <leader>w <C-w>
-        map <leader>q :wincmd c<cr>
-        nmap <leader>b :Bdelete<cr>
+	" nmap <leader>w <C-w>
+	map <leader>q :wincmd c<cr>
+	nmap <leader>b :Bdelete<cr>
 
 	nmap <leader>l :set list!<cr>
 
@@ -269,16 +269,16 @@ call plug#begin('~/.config/nvim/plugged')
 	nmap <leader>. <c-^>
 
 
-        nmap <Leader>1 <Plug>lightline#bufferline#go(1)
-        nmap <Leader>2 <Plug>lightline#bufferline#go(2)
-        nmap <Leader>3 <Plug>lightline#bufferline#go(3)
-        nmap <Leader>4 <Plug>lightline#bufferline#go(4)
-        nmap <Leader>5 <Plug>lightline#bufferline#go(5)
-        nmap <Leader>6 <Plug>lightline#bufferline#go(6)
-        nmap <Leader>7 <Plug>lightline#bufferline#go(7)
-        nmap <Leader>8 <Plug>lightline#bufferline#go(8)
-        nmap <Leader>9 <Plug>lightline#bufferline#go(9)
-        nmap <Leader>0 <Plug>lightline#bufferline#go
+	nmap <Leader>1 <Plug>lightline#bufferline#go(1)
+	nmap <Leader>2 <Plug>lightline#bufferline#go(2)
+	nmap <Leader>3 <Plug>lightline#bufferline#go(3)
+	nmap <Leader>4 <Plug>lightline#bufferline#go(4)
+	nmap <Leader>5 <Plug>lightline#bufferline#go(5)
+	nmap <Leader>6 <Plug>lightline#bufferline#go(6)
+	nmap <Leader>7 <Plug>lightline#bufferline#go(7)
+	nmap <Leader>8 <Plug>lightline#bufferline#go(8)
+	nmap <Leader>9 <Plug>lightline#bufferline#go(9)
+	nmap <Leader>0 <Plug>lightline#bufferline#go
 
 
     " remap esc
@@ -394,8 +394,7 @@ call plug#begin('~/.config/nvim/plugged')
     " substitute, search, and abbreviate multiple variants of a word
     Plug 'tpope/vim-abolish'
 
-	
-	" Cheat40 is a foldable extensible 40-column cheat sheet that you may open in Vim by pressing <leader>?
+    " Cheat40 is a foldable extensible 40-column cheat sheet that you may open in Vim by pressing <leader>?
     Plug 'lifepillar/vim-cheat40'
 
     " search inside files using ripgrep. This plugin provides an Ack command.
@@ -615,15 +614,19 @@ call plug#begin('~/.config/nvim/plugged')
 		" Start interactive EasyAlign for a motion/text object (e.g. gaip)
 		nmap ga <Plug>(EasyAlign)
 
-	"  }}} "
+	"  Istanbul {{{
+		Plug  'retorillo/istanbul.vim'
+		" Toggle between line and branch coverage
+		nmap <silent> <leader>cv :IstanbulMode<cr>
+	"  }}}
 
 	" EasyMotion {{{
 		Plug 'easymotion/vim-easymotion'
 		nmap ff <Plug>(easymotion-prefix)
-		map  / <Plug>(easymotion-sn)
-		omap / <Plug>(easymotion-tn)
-		map  n <Plug>(easymotion-next)
-		map  N <Plug>(easymotion-prev)
+		" map  / <Plug>(easymotion-sn)
+		" omap / <Plug>(easymotion-tn)
+		" map  n <Plug>(easymotion-next)
+		" map  N <Plug>(easymotion-prev)
 	"}}}"
 
     " ALE {{{
@@ -745,8 +748,8 @@ call plug#begin('~/.config/nvim/plugged')
     " markdown {{{
         Plug 'tpope/vim-markdown', { 'for': 'markdown' }
 
-		Plug 'godlygeek/tabular'
-		Plug 'plasticboy/vim-markdown'
+        Plug 'godlygeek/tabular'
+        Plug 'plasticboy/vim-markdown'
     " }}}
 
     " JSON {{{
@@ -780,6 +783,7 @@ colorscheme base16-default-dark
 		" set background=dark
 		" colorscheme solarized
     " endif
+    set nocompatible
     syntax on
     filetype plugin indent on
     " make the highlighting of tabs and other non-text less annoying
