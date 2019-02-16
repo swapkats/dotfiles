@@ -463,20 +463,42 @@ call plug#begin('~/.config/nvim/plugged')
         let g:limelight_conceal_ctermfg = 240
     " }}}
 
+	" Fast Fold {{{
+		Plug 'Konfekt/FastFold'
+		let g:fastfold_savehook = 1
+		let g:fastfold_fold_command_suffixes =  ['x','X','a','A','o','O','c','C', '0', '1', '2', 'r', 'R']
+		let g:fastfold_fold_movement_commands = [']z', '[z', 'zj', 'zk', 'zo', 'zc', 'zr', 'z0', 'z1', 'z2']
+		let g:markdown_folding = 1
+		let g:tex_fold_enabled = 1
+		let g:vimsyn_folding = 'af'
+		let g:xml_syntax_folding = 1
+		let g:javaScript_fold = 1
+		let g:sh_fold_enabled= 7
+		let g:ruby_fold = 1
+		let g:perl_fold = 1
+		let g:perl_fold_blocks = 1
+		let g:r_syntax_folding = 1
+		let g:rust_fold = 1
+		let g:php_folding = 1
+		let g:fastfold_savehook = 0
+		let g:fastfold_force = 1
+	" }}}
+
     " context-aware pasting
     Plug 'sickill/vim-pasta'
 
 	" {{{ VimWiki 
 	
 		Plug 'vimwiki/vimwiki'
-		hi VimwikiHeader1 term=bold ctermfg=Red
-		hi VimwikiHeader2 term=bold ctermfg=Green
-		hi VimwikiHeader3 term=bold ctermfg=Yellow
-		hi VimwikiHeader4 term=bold ctermfg=Cyan
-		hi VimwikiHeader5 term=bold ctermfg=White
-		hi VimwikiHeader6 term=bold ctermfg=Red
+		hi VimwikiHeader1 guifg=#FF0000
+		hi VimwikiHeader2 guifg=#00FF00
+		hi VimwikiHeader3 guifg=#0000FF
+		hi VimwikiHeader4 guifg=#FF00FF
+		hi VimwikiHeader5 guifg=#00FFFF
+		hi VimwikiHeader6 guifg=#FFFF00
+
 		let g:vimwiki_hl_cb_checked = 2
-		let g:vimwiki_folding = 'expr'
+		let g:vimwiki_folding = 'list'
 	" }}}
 	
 	" FZF {{{
