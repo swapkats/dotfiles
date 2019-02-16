@@ -448,11 +448,7 @@ call plug#begin('~/.config/nvim/plugged')
     " a simple tool for presenting slides in vim based on text files
     Plug 'sotte/presenting.vim', { 'for': 'markdown' }
 
-    " Markdown syntax, folding etc
-    Plug 'godlygeek/tabular'
-    Plug 'plasticboy/vim-markdown'
-
-    " Close buffers but keep splits
+	" Close buffers but keep splits
     Plug 'moll/vim-bbye'
 
     " Plug 'terryma/vim-multiple-cursors'
@@ -480,7 +476,7 @@ call plug#begin('~/.config/nvim/plugged')
 		hi VimwikiHeader5 term=bold ctermfg=White
 		hi VimwikiHeader6 term=bold ctermfg=Red
 		let g:vimwiki_hl_cb_checked = 2
-
+		let g:vimwiki_folding = 'expr'
 	" }}}
 	
 	" FZF {{{
@@ -721,11 +717,8 @@ call plug#begin('~/.config/nvim/plugged')
     " markdown {{{
         Plug 'tpope/vim-markdown', { 'for': 'markdown' }
 
-        " Open markdown files in Marked.app - mapped to <leader>m
-        Plug 'itspriddle/vim-marked', { 'for': 'markdown', 'on': 'MarkedOpen' }
-        nmap <leader>m :MarkedOpen!<cr>
-        nmap <leader>mq :MarkedQuit<cr>
-        nmap <leader>* *<c-o>:%s///gn<cr>
+		Plug 'godlygeek/tabular'
+		Plug 'plasticboy/vim-markdown'
     " }}}
 
     " JSON {{{
