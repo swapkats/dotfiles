@@ -363,6 +363,18 @@ call plug#begin('~/.config/nvim/plugged')
 
 " }}}
 
+" AutoCmd functions {{{
+
+	function! s:blur_window() abort
+		hi VertSplit guibg=NONE guifg=#585858
+	endfunction
+
+	function! s:focus_window() abort
+		hi VertSplit guibg=NONE guifg=#a1b56c
+	endfunction
+
+" }}}
+
 " AutoGroups {{{
     " file type specific settings
     augroup configgroup
@@ -373,6 +385,10 @@ call plug#begin('~/.config/nvim/plugged')
         autocmd BufWritePost .vimrc,.vimrc.local,init.vim source %
         autocmd BufWritePost .vimrc.local source %
 
+        " blur split lines on leaving focus
+        autocmd BufEnter,FocusGained,VimEnter,WinEnter * call s:focus_window()
+        autocmd FocusLost,WinLeave * call s:blur_window()
+		
         " automatically save file when leaving insert mode
         autocmd InsertLeave * write
 
