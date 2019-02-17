@@ -491,21 +491,21 @@ call plug#begin('~/.config/nvim/plugged')
     " context-aware pasting
     Plug 'sickill/vim-pasta'
 
-	" {{{ VimWiki 
-	
-		Plug 'vimwiki/vimwiki'
-		hi VimwikiHeader1 guifg=#FF0000
-		hi VimwikiHeader2 guifg=#00FF00
-		hi VimwikiHeader3 guifg=#0000FF
-		hi VimwikiHeader4 guifg=#FF00FF
-		hi VimwikiHeader5 guifg=#00FFFF
-		hi VimwikiHeader6 guifg=#FFFF00
+    " {{{ VimWiki 
 
-		let g:vimwiki_hl_cb_checked = 2
-		let g:vimwiki_folding = 'list'
-	" }}}
-	
-	" FZF {{{
+        Plug 'vimwiki/vimwiki'
+        hi VimwikiHeader1 guifg=#FF0000
+        hi VimwikiHeader2 guifg=#00FF00
+        hi VimwikiHeader3 guifg=#0000FF
+        hi VimwikiHeader4 guifg=#FF00FF
+        hi VimwikiHeader5 guifg=#00FFFF
+        hi VimwikiHeader6 guifg=#FFFF00
+
+        let g:vimwiki_hl_cb_checked = 2
+        let g:vimwiki_folding = 'list'
+    " }}}
+    
+    " FZF {{{
         Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
         Plug 'junegunn/fzf.vim'
         let g:fzf_layout = { 'down': '~25%' }
