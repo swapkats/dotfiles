@@ -21,7 +21,7 @@ call plug#begin('~/.config/nvim/plugged')
     set history=5000 " change history to 1000
     set textwidth=140
     set colorcolumn=0
-	set encoding=utf8
+    set encoding=utf8
     set fillchars+=vert:│
     
     set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
@@ -372,7 +372,9 @@ call plug#begin('~/.config/nvim/plugged')
         autocmd VimResized * exe 'normal! \<c-w>='
         autocmd BufWritePost .vimrc,.vimrc.local,init.vim source %
         autocmd BufWritePost .vimrc.local source %
-		autocmd InsertLeave * write
+
+        " automatically save file when leaving insert mode
+        autocmd InsertLeave * write
 
         " save all files on focus lost, ignoring warnings about untitled buffers
         autocmd FocusLost * silent! wa
