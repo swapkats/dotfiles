@@ -2,7 +2,7 @@
 
 My personal dev setup. Includes config files for tmux, NeoVim, zsh. Optimized to improve speed, and keep your hands on home row. Tries to reduce cost of context switch.
 
-![tmux + NeoVim setup](https://i.imgur.com/gGSBA0d.png)
+![tmux + NeoVim setup](https://i.imgur.com/Jo4F4b1.png)
 
 ## tmux config
 

@@ -84,6 +84,9 @@ alias ..3='cd ../../..'
 alias ..4='cd ../../../..'
 alias ..5='cd ../../../../..'
 alias l='ls -CF'
+if (command exa -v >/dev/null 2>&1 ); then
+  alias ls='exa'
+fi
 alias -- +='pushd .'
 alias -- -=popd
 alias .f='cd ~/.bin/dotfiles'
