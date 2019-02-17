@@ -20,8 +20,10 @@ call plug#begin('~/.config/nvim/plugged')
 
     set history=5000 " change history to 1000
     set textwidth=140
-    set colorcolumn=+1
-
+    set colorcolumn=0
+	set encoding=utf8
+    set fillchars+=vert:│
+    
     set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
     set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 
@@ -765,24 +767,10 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'kchmck/vim-coffee-script', { 'for': 'coffeescript' }
 " }}}
 
-call plug#end()
+	call plug#end()
 
-let base16colorspace=256  " Access colors present in 256 colorspace
-colorscheme base16-default-dark
-" Colorscheme and final setup {{{
-    " This call must happen after the plug#end() call to ensure
-    " that the colorschemes have been loaded
-    " if filereadable(expand("~/.vimrc_background"))
-        " let base16colorspace=256
-        " source ~/.vimrc_background
-    " else
-        " let g:onedark_termcolors=16
-        " let g:onedark_terminal_italics=1
-        " colorscheme Apprentice
-		" syntax enable
-		" set background=dark
-		" colorscheme solarized
-    " endif
+	let base16colorspace=256  " Access colors present in 256 colorspace
+	colorscheme base16-default-dark
     set nocompatible
     syntax on
     filetype plugin indent on
@@ -796,6 +784,8 @@ colorscheme base16-default-dark
     highlight xmlAttrib cterm=italic
     highlight Type cterm=italic
     highlight Normal ctermbg=none
+
+	hi VertSplit guibg=NONE guifg=#a1b56c
 
     call deoplete#custom#source('ultisnips', 'matchers', ['matcher_fuzzy'])
 
