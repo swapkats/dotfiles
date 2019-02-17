@@ -118,11 +118,8 @@ call plug#begin('~/.config/nvim/plugged')
     match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
 
     " Load colorschemes
-    Plug 'romainl/Apprentice'
-    Plug 'altercation/solarized'
-    Plug 'altercation/vim-colors-solarized'
-    Plug 'joshdick/onedark.vim'
 	Plug 'chriskempson/base16-vim'
+
 
     let g:netrw_banner = 0
     let g:netrw_liststyle = 3
