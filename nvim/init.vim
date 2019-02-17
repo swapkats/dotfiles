@@ -416,6 +416,7 @@ call plug#begin('~/.config/nvim/plugged')
 
     " tmux integration for vim
     Plug 'benmills/vimux'
+    Plug 'tmux-plugins/vim-tmux-focus-events'
 
     " enables repeating other supported plugins with the . command
     Plug 'tpope/vim-repeat'
