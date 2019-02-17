@@ -24,7 +24,7 @@ iTerm2, NeoVim and tmux all use same color scheme *base16-default-dark*
 Map your caps lock to ctrl for best experience.
 
 * Uses vim-plug
-* Uses ',' for leader
+* Uses ``,`` for leader
 * Works great for react development and tdd. Includes sensible plugins like
     - Ultisnips
     - vim-react-snippets
