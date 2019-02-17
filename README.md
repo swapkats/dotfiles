@@ -2,16 +2,7 @@
 
 My personal dev setup. Includes config files for tmux, NeoVim, zsh. Optimized to improve speed, and keep your hands on home row. Tries to reduce cost of context switch.
 
-![tmux + NeoVim setup](https://i.imgur.com/ClYt4QO.png)
-
-## colorscheme
-
-iTerm2, NeoVim and tmux all use same color scheme *base16-default-dark*
-
-# fonts
-
-* Uses *Fira Code* without ligature. Disabling ligatures helps iTerm2 use gpu. 
-* *Hack regular code nerd complete* for icons in iTerm2.
+![tmux + NeoVim setup](https://i.imgur.com/gGSBA0d.png)
 
 ## tmux config
 
@@ -50,3 +41,13 @@ Map your caps lock to ctrl for best experience.
     - Ale for linting
     - vim-rails
     - vim-markdown
+
+## colorscheme
+
+iTerm2, NeoVim and tmux all use same color scheme *base16-default-dark*
+
+# fonts
+
+* Uses *Fira Code* without ligature. Disabling ligatures helps iTerm2 use gpu. 
+* *Hack regular code nerd complete* for icons in iTerm2.
+
