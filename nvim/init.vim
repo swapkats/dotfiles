@@ -23,6 +23,11 @@ call plug#begin('~/.config/nvim/plugged')
     set colorcolumn=0
     set encoding=utf8
     set fillchars+=vert:│
+    set synmaxcol=200  " Faster syntax highlighting
+
+    " More natural splits
+    set splitbelow
+    set splitright
     
     set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
     set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
