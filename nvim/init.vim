@@ -390,7 +390,7 @@ call plug#begin('~/.config/nvim/plugged')
         autocmd BufWritePost .vimrc,.vimrc.local,init.vim source %
         autocmd BufWritePost .vimrc.local source %
 
-        " blur split lines on leaving focus
+        " blur vertical split lines on leaving focus
         autocmd BufEnter,FocusGained,VimEnter,WinEnter * call s:focus_window()
         autocmd FocusLost,WinLeave * call s:blur_window()
 		
@@ -640,7 +640,7 @@ call plug#begin('~/.config/nvim/plugged')
 	"  Istanbul {{{
 		Plug  'retorillo/istanbul.vim'
 		" Toggle between line and branch coverage
-		nmap <silent> <leader>cv :IstanbulMode<cr>
+		nnoremap <silent> <leader>cv :IstanbulMode<cr>
 	"  }}}
 
 	" EasyMotion {{{
