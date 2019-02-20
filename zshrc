@@ -92,6 +92,10 @@ alias -- -=popd
 alias .f='cd ~/.bin/dotfiles'
 alias c='cd ~/_code'
 
+if (command bat -v >/dev/null 2>&1 ); then
+  alias cat='bat' # bat is cat command on steroids https://github.com/sharkdp/bat
+fi
+
 alias be='bundle exec'
 if (command -v rvm >/dev/null 2>&1 ); then
   alias bi='bundle check --path=.bundle || bundle install --path=.bundle --binstubs .bundle/bin --jobs=4 --retry=3'
