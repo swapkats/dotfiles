@@ -345,7 +345,7 @@ call plug#begin('~/.config/nvim/plugged')
 
     " scroll the viewport faster
     nnoremap <C-e> 3<C-e>
-    nnoremap <C-y> 3<C-y>
+    nnoremap <C-q> 3<C-y>
 
     " moving up and down work as you would expect
     nnoremap <silent> j gj
