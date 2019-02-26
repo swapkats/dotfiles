@@ -723,12 +723,12 @@ call plug#begin('~/.config/nvim/plugged')
 	Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx', 'html'] }
 	Plug 'moll/vim-node', { 'for': 'javascript' }
 	Plug 'mxw/vim-jsx', { 'for': ['javascript.jsx', 'javascript'] }
-	Plug 'maxmellon/vim-jsx-pretty'
+	" Plug 'maxmellon/vim-jsx-pretty'
     let g:xml_syntax_folding = 1
 	" Fixes jsx end tag hightlight
 	hi link xmlEndTag xmlTag
 	" syn region xmlTagName matchgroup=xmlEndTag start=+</+ end=+>+
-	Plug 'chemzqm/vim-jsx-improve'
+	" Plug 'chemzqm/vim-jsx-improve'
 	Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 	Plug 'ternjs/tern_for_vim', { 'for': ['javascript', 'javascript.jsx'], 'do': 'npm install' }
 	Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
