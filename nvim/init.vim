@@ -322,7 +322,7 @@ call plug#begin('~/.config/nvim/plugged')
     " enable . command in visual mode
     vnoremap . :normal .<cr>
 
-	" move among buffers with CTRL
+	" Move between jumps from home row
 	nnoremap <C-j> <C-o>
 	nnoremap <C-k> <C-i> 
 
