@@ -9,6 +9,7 @@ My personal dev setup. Includes config files for tmux, NeoVim, zsh. Optimized to
 * tmux config extends [gpakosz/.tmux](https://github.com/gpakosz/.tmux). 
 * changes to colorscheme to match *base16-default-dark* colorscheme. 
 * applescript displays itunes and spotify track on status line
+* C-s for tmux prefix. Use stronger middle to move between both tmux and vim split to move between both tmux and vim splitss
 
 ## NeoVim setup
 
