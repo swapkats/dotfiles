@@ -248,7 +248,7 @@ call plug#begin('~/.config/nvim/plugged')
 	" nmap <space><space> :w<cr>
 	nmap <leader>, :w<cr>
 	nnoremap ; :
-	nmap <silent> <leader>h :set hlsearch!<cr>
+	" nmap <silent> <leader>h :set hlsearch!<cr>
 
 	" Nerd tree like project explorer
 	nmap <silent> <leader>k :Vexplore<cr>
@@ -414,6 +414,10 @@ call plug#begin('~/.config/nvim/plugged')
 " General Functionality {{{
     " substitute, search, and abbreviate multiple variants of a word
     Plug 'tpope/vim-abolish'
+
+	"" Vim-cool disables search highlighting when you are done searching
+	Plug 'romainl/vim-cool'
+	let g:CoolTotalMatches = 1
 
     " Cheat40 is a foldable extensible 40-column cheat sheet that you may open in Vim by pressing <leader>?
     Plug 'lifepillar/vim-cheat40'
