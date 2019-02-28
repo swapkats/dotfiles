@@ -248,6 +248,7 @@ call plug#begin('~/.config/nvim/plugged')
 	" nmap <space><space> :w<cr>
 	nmap <leader>, :w<cr>
 	nnoremap ; :
+	nnoremap ;; :
 	" nmap <silent> <leader>h :set hlsearch!<cr>
 
 	" Nerd tree like project explorer
