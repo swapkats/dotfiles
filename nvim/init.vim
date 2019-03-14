@@ -429,7 +429,10 @@ call plug#begin('~/.config/nvim/plugged')
     " insert or delete brackets, parens, quotes in pair
     Plug 'jiangmiao/auto-pairs'
 
-    " easy commenting motions
+	" A powerful grammar checker for Vim using LanguageTool.
+	Plug 'rhysd/vim-grammarous' 
+
+	" easy commenting motions
     Plug 'tpope/vim-commentary'
 
     " mappings which are simply short normal mode aliases for commonly used ex commands
@@ -740,7 +743,7 @@ call plug#begin('~/.config/nvim/plugged')
 	Plug 'joaohkfaria/vim-jest-snippets'
 	Plug 'glanotte/vim-jasmine'
 
-	nmap <leader>p :Prettier<cr>
+	nmap <silent> <leader>p :Prettier<cr>
 	let g:prettier#autoformat = 0
 	let g:prettier#exec_cmd_async = 1
 	let g:prettier#quickfix_enabled = 0
