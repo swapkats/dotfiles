@@ -9,5 +9,8 @@
   "enabledModels": [
     "opencode-go/*"
   ],
-  "lastChangelogVersion": "1.6.0"
+  "lastChangelogVersion": "1.6.0",
+  "packages": [
+    "git:github.com/swapkats/yum-pi"
+  ]
 }
