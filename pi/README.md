@@ -5,7 +5,11 @@ Skills, prompts, extensions, and themes can grow here as sibling folders.
 
 ## Layout
 
-- `settings.json` — provider, default model, compaction. Never put keys here.
+- `settings.json` — provider, default model, compaction, and the `packages`
+  declaration. Never put keys here. The declared package is
+  [yum-pi](https://github.com/swapkats/yum-pi): deterministic guardrails
+  (blocks pushes to main/master and writes outside the working directory),
+  `/pr` and `/sync-dotfiles` prompt templates, and the `c22-dark` theme.
 - `AGENTS.md` — working instructions for Bodmash, applied across directories.
 - `setup.sh` — symlinks everything into the agent dir, creates a local-only
   `auth.json` that resolves the key from `$OPENCODE_API_KEY` at runtime, and
@@ -25,3 +29,8 @@ pi --print --no-session --model "opencode-go/muse-spark-1.3-contributor" \
 current shell from the gateway dotenv and installs the `~/.zshenv` hook so
 future shells resolve it too. On a machine without the gateway dotenv, export
 `OPENCODE_API_KEY=<key>` in your shell before running the script.
+
+Declared packages need no setup step: pi installs `yum-pi` automatically on
+its next start (update clones with `pi update --extensions`). The optional
+theme activates through `/settings` (pick `c22-dark`) or a
+`"theme": "c22-dark"` entry in `settings.json`.
