@@ -12,5 +12,6 @@
   "lastChangelogVersion": "1.6.0",
   "packages": [
     "git:github.com/swapkats/yum-pi"
-  ]
+  ],
+  "theme": "c22-dark"
 }
