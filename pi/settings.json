@@ -1,1 +1,13 @@
-{"$schema": "https://pi.dev/schemas/settings.schema.json", "compaction": {"keepRecentTokens": 20000, "reserveTokens": 16384}, "defaultModel": "muse-spark-1.3-contributor", "defaultProvider": "opencode-go", "enabledModels": ["opencode-go/*"]}
+{
+  "$schema": "https://pi.dev/schemas/settings.schema.json",
+  "compaction": {
+    "keepRecentTokens": 20000,
+    "reserveTokens": 16384
+  },
+  "defaultModel": "muse-spark-1.3-contributor",
+  "defaultProvider": "opencode-go",
+  "enabledModels": [
+    "opencode-go/*"
+  ],
+  "lastChangelogVersion": "1.6.0"
+}
