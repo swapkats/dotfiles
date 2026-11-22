@@ -33,4 +33,36 @@ else
   echo "kept existing $AGENT_DIR/auth.json"
 fi
 
+# Every shell must export OPENCODE_API_KEY for the `!printenv` in auth.json
+# to resolve. Install a ~/.zshenv hook that sources the live key from the
+# gateway dotenv at runtime; the key itself is never written anywhere.
+ZSHENV="$HOME/.zshenv"
+if ! grep -qF "# pi agent (swapkats/dotfiles)" "$ZSHENV" 2>/dev/null; then
+  cat >> "$ZSHENV" <<'EOF'
+
+# pi agent (swapkats/dotfiles): resolve OPENCODE_API_KEY from the gateway
+# dotenv at runtime. The key itself is never stored in this file or any repo.
+_pi_oc_key="$(sed -n 's/^OPENCODE_GO_API_KEY=//p' "$HOME/.hermes/.env" 2>/dev/null | tail -n 1)"
+case "$_pi_oc_key" in \"*\") _pi_oc_key="${_pi_oc_key#\"}"; _pi_oc_key="${_pi_oc_key%\"}";; esac
+case "$_pi_oc_key" in \'*\') _pi_oc_key="${_pi_oc_key#\'}"; _pi_oc_key="${_pi_oc_key%\'}";; esac
+[ -n "$_pi_oc_key" ] && export OPENCODE_API_KEY="$_pi_oc_key"
+unset _pi_oc_key
+EOF
+  echo "added OPENCODE_API_KEY resolver hook to $ZSHENV"
+else
+  echo "kept existing $ZSHENV resolver"
+fi
+
+# The shell that launched this script predates the hook; export the key now
+# so the auth check below works on first run. On machines without the gateway
+# dotenv, `export OPENCODE_API_KEY=<key>` manually instead.
+if [ -z "${OPENCODE_API_KEY:-}" ] && [ -f "$HOME/.hermes/.env" ]; then
+  _oc="$(sed -n 's/^OPENCODE_GO_API_KEY=//p' "$HOME/.hermes/.env" | tail -n 1)"
+  _oc="${_oc%\"}"; _oc="${_oc#\"}"; _oc="${_oc%\'}"; _oc="${_oc#\'}"
+  if [ -n "$_oc" ]; then
+    export OPENCODE_API_KEY="$_oc"
+  fi
+  unset _oc
+fi
+
 pi auth check --provider opencode-go
