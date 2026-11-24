@@ -12,7 +12,8 @@
   "lastChangelogVersion": "1.6.0",
   "packages": [
     "git:github.com/swapkats/yum-pi",
-    "git:github.com/HazAT/pi-interactive-subagents"
+    "git:github.com/HazAT/pi-interactive-subagents",
+    "npm:pi-observational-memory"
   ],
   "extensionChangelogVersions": {
     "{\"source\":\"git:github.com/swapkats/yum-pi\",\"scope\":\"user\"}": "0.1.0"
