@@ -1,2 +1,4 @@
 config.bat
 node_modules
+pi/extensions/browser/.profile
+pi/skills/pdf-reader/.venv
