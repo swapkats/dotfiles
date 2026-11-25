@@ -13,7 +13,8 @@
   "packages": [
     "git:github.com/swapkats/yum-pi",
     "git:github.com/HazAT/pi-interactive-subagents",
-    "npm:pi-observational-memory"
+    "npm:pi-observational-memory",
+    "npm:@narumitw/pi-plan-mode"
   ],
   "extensionChangelogVersions": {
     "{\"source\":\"git:github.com/swapkats/yum-pi\",\"scope\":\"user\"}": "0.1.0"
